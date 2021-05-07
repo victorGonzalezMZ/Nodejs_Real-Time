@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     API: {
-        PORT: 3003
+        PORT: 3000
     },
     MONGODB: {
         HOST: 'localhost',
