@@ -7,6 +7,7 @@ import MongoHelper from './helpers/mongo.helper';
 import SocketLogic from './sockets/socket.logic';
 import ENV from './environments/env';
 import TokenHelper from './helpers/token.helper';
+import SocketIO from 'socket.io';
 
 const mongo = MongoHelper.getInstace(ENV.MONGODB);
 const tokenHelper = TokenHelper(ENV, mongo);
@@ -117,6 +118,18 @@ const tokenHelper = TokenHelper(ENV, mongo);
 
             // Logic SignUp
             socketLogic.signUp(socketIO, socket);
+
+            socketLogic.passwordSetup(socketIO, socket);
+
+            socketLogic.login(socketIO, socket);
+
+            socketLogic.getCurrentUsers(socketIO, socket);
+
+            socketLogic.message(socket);
+
+            socketLogic.getChatMessages(socketIO, socket);
+
+            socketLogic.logout(socket);
 
             // Logic Disconnect
             socketLogic.disconnect(socket);

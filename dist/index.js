@@ -107,6 +107,12 @@ const tokenHelper = token_helper_1.default(env_1.default, mongo);
             socketLogic.listenSocketConnect(socket);
             // Logic SignUp
             socketLogic.signUp(socketIO, socket);
+            socketLogic.passwordSetup(socketIO, socket);
+            socketLogic.login(socketIO, socket);
+            socketLogic.getCurrentUsers(socketIO, socket);
+            socketLogic.message(socket);
+            socketLogic.getChatMessages(socketIO, socket);
+            socketLogic.logout(socket);
             // Logic Disconnect
             socketLogic.disconnect(socket);
         });
